@@ -193,18 +193,18 @@ public class Patterns {
 
 
     public static void main(String[] args) {
-        // Scanner sc = new Scanner(System.in);
-        // int n =sc.nextInt();
-        // sc.close();
-        // charPattern(n);
-        // hollow_Rectangle(4, 5);
-        // rotated_and_inverted_HalfPyramid(4);
-        // inverted_halfPyramid_with_numbers(5);
-        // floyd_triangle(5);
-        // zero_one_pattern(5);
-        // butterfly_pattern(4);
-        // solid_Rhombus(5);
-        // hollow_Rhombus(5);
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        sc.close();
+        charPattern(n);
+        hollow_Rectangle(4, 5);
+        rotated_and_inverted_HalfPyramid(4);
+        inverted_halfPyramid_with_numbers(5);
+        floyd_triangle(5);
+        zero_one_pattern(5);
+        butterfly_pattern(4);
+        solid_Rhombus(5);
+        hollow_Rhombus(5);
         diamond_pattern(4);
     }
 }
