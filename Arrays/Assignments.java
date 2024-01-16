@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -154,16 +153,16 @@ public class Assignments {
 
     public static void main(String[] args) {
         int nums[] = {-1, 0,  1, 2, -1, -4};
-        // System.out.println(rep(nums));
-        // System.out.println(rep_optimized(nums));
+        System.out.println(rep(nums));
+        System.out.println(rep_optimized(nums));
 
-        // System.out.println(search_in_rotated_sorted_array(nums, 7));
-        // System.out.println(binary_search(nums, 0));
+        System.out.println(search_in_rotated_sorted_array(nums, 7));
+        System.out.println(binary_search(nums, 0));
 
 
-        // System.out.println(maxProfit(nums));
+        System.out.println(maxProfit(nums));
 
-        // System.out.println(TrappingRainwater(nums));
+        System.out.println(TrappingRainwater(nums));
 
         // print_triplets_with_sum_zero(nums);
     }
