@@ -154,8 +154,116 @@ public class Array {
     }
 
 
+    // int trappedWater = (WaterLevel-height)*Width
+    public static int trapping_Rainwater(int height[]){
+        int trappedWater=0,Width=1;
+        int leftMax[]=new int[height.length];
+        int rightMax[]=new int[height.length];
+        // for leftMax
+        leftMax[0] = height[0];
+        for(int i=1; i<height.length; i++){
+            leftMax[i] = Math.max(leftMax[i-1], height[i]);
+        }
+        // for rightMax
+        rightMax[height.length-1] = height[height.length-1];
+        for(int i=height.length-2; i>=0; i--){
+            rightMax[i] = Math.max(rightMax[i+1], height[i]);
+        }
+        // for trapped water
+        int sumtrap=0;
+        for(int i=0; i<height.length; i++){
+            int WaterLevel = Math.min(rightMax[i], leftMax[i]);
+            trappedWater = (WaterLevel-height[i])*Width;
+            sumtrap+=trappedWater;
+        }
+        return sumtrap;
+    }
+
+    public static int[] productExceptSelf(int arr[]){
+        int prefix[] = new int[arr.length];
+        int suffix[] = new int[arr.length];
+        // for prefix product
+        prefix[0] = 1;
+        for(int i=1; i<arr.length; i++){
+            prefix[i] = prefix[i-1]*arr[i];
+        }
+        // for suffix product
+        suffix[arr.length-1] = 1;
+        for(int i=arr.length-2; i>=0; i--){
+            suffix[i] = suffix[i+1]*arr[i];
+        }
+
+        int ans[] = new int[arr.length];
+        for(int i=0; i<arr.length; i++){
+            ans[i] = prefix[i] * suffix[i];
+        }
+        return ans;
+    }
+
+    public static int max_product_subarray(int arr[]){
+        int max_product=Integer.MIN_VALUE;
+        int leftProduct=1,rightProduct=1;
+        for(int i=0; i<arr.length; i++){
+            leftProduct = leftProduct==0 ? 1 : leftProduct;
+            rightProduct = rightProduct==0 ? 1 : rightProduct;
+
+            leftProduct = leftProduct * arr[i];
+
+            rightProduct = rightProduct * arr[arr.length-1-i];
+
+            max_product = Math.max(max_product, Math.max(leftProduct, rightProduct));
+        }
+        return max_product;
+    }
+
+
+    public static int minimum_in_rotated_sorted_array(int arr[]){
+        int s=0,e=arr.length-1;
+        while(s<=e){
+            int mid=(s+e)/2;
+            if(arr[mid]<arr[mid-1]){
+                return arr[mid];
+            }
+            else if(arr[mid]>arr[e]){
+                s=mid+1;
+            }
+            else{
+                e=mid-1;
+            }
+        }
+        return arr[s];
+    }
+
+    public static boolean is_pair_sum_in_rotated_sorted_array(int arr[], int key){
+        int n=arr.length;
+        // for pivot Element
+        int i;
+        for(i=0; i<n-1; i++){
+            if(arr[i]>arr[i+1]){
+                break;
+            }
+        }
+            int l = (i+1)%n; // minimum element
+            int r = i;   // maximum element
+
+            while(l!=r){
+                if(arr[l]+arr[r]==key){
+                    return true;
+                }
+                else if(arr[l]+arr[r]<key){
+                    l=(l+1)%n;
+                }
+                else{
+                    r=(n+r-1)%n;
+                }
+            }
+        return false;
+    }
+
+
+
     public static void main(String[] args) {
-        int arr[] = {3,2,1,5,6,4};
+        int arr[] = {11, 15, 6, 8, 9, 10};
         // minmax(arr);
 
 
@@ -177,6 +285,12 @@ public class Array {
 
         // rep_and_missing_number_from_array(arr);
 
-        System.out.println(kth_largest_element(arr, 2));
+        // System.out.println(kth_largest_element(arr, 2));
+
+        // System.out.println(trapping_Rainwater(arr));
+
+        // System.out.println(max_product_subarray(arr));
+
+        System.out.println(is_pair_sum_in_rotated_sorted_array(arr, 16));
     }
 }

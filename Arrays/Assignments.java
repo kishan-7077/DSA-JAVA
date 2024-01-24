@@ -150,20 +150,72 @@ public class Assignments {
     }
 
 
+    public static int number_of_7s_in_2d_array(int matrix[][]){
+        int count=0;
+
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                if(matrix[i][j]==7){
+                    count ++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    public static int[][] transpose_of_matrix(int matrix[][]){
+        int transpose[][] = new int[matrix[0].length][matrix.length];
+        // int row=0; int col=0;
+        // while (row<matrix.length && col<matrix[0].length) {
+        //     if(row!=col){
+        //         matrix[row][col]=transpose[col][row];
+        //     }
+        // }
+
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                transpose[j][i] = matrix[i][j];
+            }
+            System.out.println();
+        }
+
+        return transpose;
+    }
+
+    public static void print_2D_arr(int arr[][]){
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[0].length; j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+
 
     public static void main(String[] args) {
-        int nums[] = {-1, 0,  1, 2, -1, -4};
-        System.out.println(rep(nums));
-        System.out.println(rep_optimized(nums));
+        // int nums[] = {-1, 0,  1, 2, -1, -4};
+        // System.out.println(rep(nums));
+        // System.out.println(rep_optimized(nums));
 
-        System.out.println(search_in_rotated_sorted_array(nums, 7));
-        System.out.println(binary_search(nums, 0));
+        // System.out.println(search_in_rotated_sorted_array(nums, 7));
+        // System.out.println(binary_search(nums, 0));
 
 
-        System.out.println(maxProfit(nums));
+        // System.out.println(maxProfit(nums));
 
-        System.out.println(TrappingRainwater(nums));
+        // System.out.println(TrappingRainwater(nums));
 
         // print_triplets_with_sum_zero(nums);
+
+
+
+        int arr[][] = {{4,7,8},{8,8,7}};
+
+        // System.out.println(number_of_7s_in_2d_array(arr));
+
+        int transpose[][] = transpose_of_matrix(arr);
+        print_2D_arr(transpose);
     }
 }
