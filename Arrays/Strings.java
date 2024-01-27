@@ -1,19 +1,19 @@
 public class Strings {
 
-    public static boolean check_palindrome(String str){
-        int start = 0, end = str.length()-1;
-        while (start<=end) {
-            if(str.charAt(start)!=str.charAt(end)){
+    public static boolean check_palindrome(String str) {
+        int start = 0, end = str.length() - 1;
+        while (start <= end) {
+            if (str.charAt(start) != str.charAt(end)) {
                 return false;
             }
             start++;
             end--;
-        } 
+        }
 
         // Alternate method
-        for(int i=0; i<str.length()/2; i++){
-            int n= str.length();
-            if(str.charAt(i) != str.charAt(n-1-i)){
+        for (int i = 0; i < str.length() / 2; i++) {
+            int n = str.length();
+            if (str.charAt(i) != str.charAt(n - 1 - i)) {
                 return false;
             }
         }
@@ -21,8 +21,8 @@ public class Strings {
         return true;
     }
 
-    public static double shortest_path(String path, int initial_x,int initial_y){
-        for(int i=0; i<path.length(); i++){
+    public static double shortest_path(String path, int initial_x, int initial_y) {
+        for (int i = 0; i < path.length(); i++) {
             switch (path.charAt(i)) {
                 case 'N':
                     initial_y++;
@@ -35,34 +35,32 @@ public class Strings {
                     break;
                 case 'W':
                     initial_x--;
-                    break;    
-                
+                    break;
+
                 default:
                     break;
             }
-            
+
         }
-        double distance = Math.sqrt(Math.pow(initial_x, 2)+Math.pow(initial_y, 2));
+        double distance = Math.sqrt(Math.pow(initial_x, 2) + Math.pow(initial_y, 2));
         return distance;
     }
 
-
-    public static String string_compression(String str){
+    public static String string_compression(String str) {
         String newstr = "";
-        for(int i=0; i<str.length(); i++){
-            Integer count =1;
-            while( i<str.length()-1 && str.charAt(i) == str.charAt(i+1) ){
+        for (int i = 0; i < str.length(); i++) {
+            Integer count = 1;
+            while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {
                 count++;
                 i++;
             }
             newstr += str.charAt(i);
-            if(count>1){
+            if (count > 1) {
                 newstr += count.toString();
             }
         }
         return newstr;
     }
-
 
     public static void main(String[] args) {
         // String str = "racecar";
