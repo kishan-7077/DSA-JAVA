@@ -65,7 +65,7 @@ public class Assignments {
 
     public static void main(String[] args) {
         int arr[] = { 3, 2, 4, 5, 6, 2, 7, 2, 2 };
-        // print_occur(arr, 0, 2);
+        print_occur(arr, 0, 2);
 
         // System.out.println(convert_to_eng("1974", 0, new StringBuilder("")));
 
