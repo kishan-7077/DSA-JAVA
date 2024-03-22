@@ -2,11 +2,12 @@
   "java.project.outputPath": ".class",
   "vsintellicode.modify.editor.suggestSelection": "enabled",
   "java.project.sourcePaths": [
-    "Oops",
-    "Arrays",
-    "JavaBasics",
     "Sheets",
     "Recursion",
-    "BackTracking"
+    "Oops",
+    "JavaBasics",
+    "BackTracking",
+    "Arrays",
+    "ArrayList"
   ]
 }
