@@ -9,5 +9,10 @@
     "BackTracking",
     "Arrays",
     "ArrayList"
-  ]
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "java.format.onType.enabled": true,
+  "editor.formatOnPaste": true,
+  "notebook.formatOnSave.enabled": true
 }
