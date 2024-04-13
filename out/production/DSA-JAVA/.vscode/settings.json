@@ -1,0 +1,20 @@
+{
+  "java.project.outputPath": ".class",
+  "vsintellicode.modify.editor.suggestSelection": "enabled",
+  "java.project.sourcePaths": [
+    "Sheets",
+    "Recursion",
+    "Oops",
+    "JavaBasics",
+    "BackTracking",
+    "Arrays",
+    "ArrayList",
+    "LinkedList"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "java.format.onType.enabled": true,
+  "editor.formatOnPaste": true,
+  "notebook.formatOnSave.enabled": true,
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m -Xlog:disable"
+}
