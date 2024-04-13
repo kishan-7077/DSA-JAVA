@@ -1,4 +1,6 @@
-public class Assignments {
+package Recursion;
+
+public class Assignment {
 
     public static void print_occur(int arr[], int idx, int key) {
         // base
@@ -65,12 +67,13 @@ public class Assignments {
 
     public static void main(String[] args) {
         int arr[] = { 3, 2, 4, 5, 6, 2, 7, 2, 2 };
-        print_occur(arr, 0, 2);
+//        print_occur(arr, 0, 2);
 
         // System.out.println(convert_to_eng("1974", 0, new StringBuilder("")));
 
         // convert_to_eng_optimized(1947);
 
         System.out.println(length_of_str("abcde"));
+        System.out.println(length_of_str("abcdefgh"));
     }
 }
