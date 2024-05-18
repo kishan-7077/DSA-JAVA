@@ -49,8 +49,16 @@ public class BFS {      // go immediate neighbors first (level order traversal)
     }
 
     public static void bfs(ArrayList<Edge>[] graph){
-        Queue<Integer> q = new LinkedList<>();
         boolean[] vis = new boolean[graph.length];
+        for (int i=0; i< graph.length; i++){
+            if(!vis[i]){
+                bfsUtil(graph,vis);
+            }
+        }
+    }
+
+    public static void bfsUtil(ArrayList<Edge>[] graph, boolean[] vis){
+        Queue<Integer> q = new LinkedList<>();
 
         q.add(0); // src =0
 
