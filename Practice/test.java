@@ -235,6 +235,60 @@ public class test {
     }
 
 
+
+
+    public static int minPalindrome(int[] arr){
+        int n = arr.length;
+        int s = 0;
+        int e = n-1;
+
+        int count = 0;
+        if(arr.length == 3 && arr[s] == arr[e]){
+            return count;
+        }else if(arr[s] == arr[e]){
+            s++;
+            e--;
+            while(s<e){
+                count++;
+                s++;
+                e--;
+            }
+        }else{
+            // as we have to merge extra at last
+            count = 1;
+            while(s<e){
+                s++;
+                e--;
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+
+
+
+    public static void possibleCombinations(int[] arr,int r){
+        int n = arr.length;
+        Queue<Integer> q = new LinkedList<>();
+        for(int i=0; i<n; i++){
+            q.add(arr[i]);
+        }
+        if(r==n){
+            while (!q.isEmpty()){
+                System.out.print(q.remove() + " ");
+            }
+            return;
+        }
+
+        for(int i=1; i<n; i++){
+            int curr = q.remove();
+
+        }
+    }
+
+
     public static void main(String[] args) {
         int V = 4;
 
@@ -274,7 +328,16 @@ public class test {
         row = arr.length;
         col = arr[0].length;
 
+//        System.out.println(largestRegion(region));
 
-        System.out.println(largestRegion(region));
+        int[] pal = {15, 4, 15};
+//        System.out.println(minPalindrome(pal));
+
+
+        int[] comb = {1,2,3,4};
+        int r = 2;
+
+
+
     }
 }

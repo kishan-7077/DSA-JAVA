@@ -1,4 +1,4 @@
-package Queues;
+package JavaBasics.Queues;
 
 public class Basic {
     static class QueueUsingArray{
