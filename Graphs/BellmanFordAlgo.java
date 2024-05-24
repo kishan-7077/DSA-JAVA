@@ -47,7 +47,7 @@ public class BellmanFordAlgo {
             for(int j=0; j<graph.length; j++){
                 for(int k=0; k<graph[j].size(); k++){
                     Edge e = graph[j].get(k);
-                    // u,v,wt
+                    // u,v,cost
                     int u = e.src;
                     int v = e.dest;
                     int wt = e.wt;
